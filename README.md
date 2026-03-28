@@ -7,7 +7,7 @@ It is based on patient health data such as age, cholesterol, blood pressure, and
 The idea is to understand how machine learning can be used in healthcare for early detection and better decision-making.
 
 # Dataset
-I used the Heart Disease dataset from Kaggle (UCI dataset).  
+I used the Heart Disease dataset from Kaggle (UCI dataset)https://www.kaggle.com/datasets/redwankarimsony/heart-disease-data
 It contains different medical attributes of patients along with a column that indicates the presence of heart disease.
 
 # Data Preprocessing
@@ -52,3 +52,6 @@ I used two machine learning models:
 - Use a larger dataset
 - Build a web app for prediction
 
+# Conclusion
+
+This project demonstrates how machine learning can be used to predict heart disease based on patient data. Logistic Regression and Random Forest models were trained, with Random Forest giving better performance. The project highlights the importance of data cleaning, feature selection, and proper model evaluation. This approach can be useful in healthcare systems for early detection and decision support.
