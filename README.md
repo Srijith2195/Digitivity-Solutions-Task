@@ -1,42 +1,54 @@
-# Digitivity Solutions Task
+# Heart Disease Prediction Project
 
-Heart disease analysis project using the UCI Heart Disease Dataset.
+# About the Project
+This project is about predicting whether a person has heart disease or not using machine learning.  
+It is based on patient health data such as age, cholesterol, blood pressure, and other medical factors.
 
-## 📁 Files
+The idea is to understand how machine learning can be used in healthcare for early detection and better decision-making.
 
-- **Digitivity Solutions Task.ipynb** - Jupyter notebook containing data analysis and modeling
-- **heart_disease_uci.csv** - UCI heart disease dataset
+# Dataset
+I used the Heart Disease dataset from Kaggle (UCI dataset).  
+It contains different medical attributes of patients along with a column that indicates the presence of heart disease.
 
-## 📊 Dataset
+# Data Preprocessing
+Before training the model, I performed some basic data cleaning steps:
+- Replaced missing values (`?`) with proper values
+- Converted all columns into numeric format
+- Filled missing values using mean
+- Created a new target column for prediction (0 = No disease, 1 = Disease)
+- Removed unnecessary columns to avoid data leakage
 
-The dataset contains medical patient data for heart disease prediction with various features including:
-- Demographics (age, sex)
-- Clinical measurements (blood pressure, cholesterol, blood sugar)
-- Test results (ECG, exercise-induced angina, etc.)
-- Target variable: presence of heart disease
+# Exploratory Data Analysis
+I created a few visualizations to understand the dataset better:
+- A count plot to see how many people have heart disease
+- A histogram to analyze how age affects heart disease
+- A heatmap to check relationships between features
 
-## 🚀 Usage
+These helped me understand which features are important.
 
-1. Clone the repository:
-```bash
-git clone https://github.com/Srijith2195/Digitivity-Solutions-Task.git
-```
+# Models Used
+I used two machine learning models:
 
-2. Open the Jupyter notebook:
-```bash
-jupyter notebook "Digitivity Solutions Task.ipynb"
-```
+**1. Logistic Regression**
+- Simple and easy to understand
+- Used as a baseline model
 
-3. Run all cells to execute the complete analysis pipeline
+**2. Random Forest**
+- More powerful model
+- Works better for complex data
 
-## 📋 Requirements
+# Model Training
+- Split the data into training and testing sets (80/20)
+- Applied feature scaling for better performance
+- Trained both models using Scikit-learn
 
-- Python 3.x
-- Jupyter Notebook
-- pandas
-- scikit-learn
-- matplotlib/seaborn (for visualization)
+# Results
+- Logistic Regression gave decent accuracy
+- Random Forest performed better compared to Logistic Regression
 
-## 🔗 Repository
+# Future Improvements
+- Try more advanced models like XGBoost
+- Tune model parameters
+- Use a larger dataset
+- Build a web app for prediction
 
-https://github.com/Srijith2195/Digitivity-Solutions-Task
