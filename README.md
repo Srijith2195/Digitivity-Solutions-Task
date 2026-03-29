@@ -27,39 +27,68 @@ Before training the model, I performed some basic data cleaning steps:
 
 ## Workflow Diagram
 
-Start  
-↓  
-Load Dataset 
-↓  
-Data Cleaning and Preprocessing  
-    → Replace '?' with NaN  
-    → Convert to Numeric  
-    → Fill Missing Values  
-    → Remove Duplicates  
-↓  
-Feature Engineering  
-    → Create Target Variable  
-    → Remove 'num' Column (Avoid Leakage)  
-↓  
-Exploratory Data Analysis  
-    → Count Plot  
-    → Histogram  
-    → Heatmap  
-↓  
-Train-Test Split (80/20)  
-↓  
-Feature Scaling (StandardScaler)  
-↓  
-Model Training  
-    → Logistic Regression  
-    → Random Forest  
-↓  
-Model Evaluation  
-    → Accuracy Score  
-↓  
-Prediction  
-↓  
-End  
+## Workflow Diagram
+
++-----------------------------+
+|            Start            |
++-----------------------------+
+              ↓
++-----------------------------+
+|   Load Dataset (heart.csv)  |
++-----------------------------+
+              ↓
++-------------------------------------------+
+|   Data Cleaning and Preprocessing         |
+|-------------------------------------------|
+| - Replace '?' with NaN                    |
+| - Convert to Numeric                      |
+| - Fill Missing Values                     |
+| - Remove Duplicates                       |
++-------------------------------------------+
+              ↓
++-------------------------------------------+
+|        Feature Engineering                |
+|-------------------------------------------|
+| - Create Target Variable                  |
+| - Remove 'num' (Avoid Leakage)            |
++-------------------------------------------+
+              ↓
++-------------------------------------------+
+|   Exploratory Data Analysis               |
+|-------------------------------------------|
+| - Count Plot                             |
+| - Histogram                              |
+| - Heatmap                                |
++-------------------------------------------+
+              ↓
++-----------------------------+
+|  Train-Test Split (80/20)   |
++-----------------------------+
+              ↓
++-----------------------------+
+| Feature Scaling (Standard)  |
++-----------------------------+
+              ↓
++-------------------------------------------+
+|        Model Training                     |
+|-------------------------------------------|
+| - Logistic Regression                     |
+| - Random Forest                           |
++-------------------------------------------+
+              ↓
++-----------------------------+
+|     Model Evaluation        |
+|-----------------------------|
+| - Accuracy Score            |
++-----------------------------+
+              ↓
++-----------------------------+
+|         Prediction          |
++-----------------------------+
+              ↓
++-----------------------------+
+|            End              |
++-----------------------------+
 
 # Exploratory Data Analysis
 I created a few visualizations to understand the dataset better:
