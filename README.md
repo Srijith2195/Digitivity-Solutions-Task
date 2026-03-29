@@ -1,23 +1,50 @@
 # Heart Disease Prediction Project
 
-# About the Project
+## About the Project
 This project is about predicting whether a person has heart disease or not using machine learning.  
 It is based on patient health data such as age, cholesterol, blood pressure, and other medical factors.
 
 The idea is to understand how machine learning can be used in healthcare for early detection and better decision-making.
 
-# Dataset
-I used the Heart Disease dataset from Kaggle (UCI dataset) https://www.kaggle.com/datasets/redwankarimsony/heart-disease-data
+---
+
+## Dataset
+I used the Heart Disease dataset from Kaggle (UCI dataset):  
+https://www.kaggle.com/datasets/redwankarimsony/heart-disease-data  
 
 It contains different medical attributes of patients along with a column that indicates the presence of heart disease.
 
-# Data Preprocessing
+---
+
+## Data Preprocessing
 Before training the model, I performed some basic data cleaning steps:
-- Replaced missing values (`?`) with proper values
-- Converted all columns into numeric format
-- Filled missing values using mean
-- Created a new target column for prediction (0 = No disease, 1 = Disease)
-- Removed unnecessary columns to avoid data leakage
+
+- Replaced missing values (`?`) with proper values  
+- Converted all columns into numeric format  
+- Filled missing values using mean  
+- Created a new target column for prediction (0 = No disease, 1 = Disease)  
+- Removed unnecessary columns to avoid data leakage  
+
+---
+
+## Workflow Diagram
+
+config:
+  layout: dagre
+flowchart TB
+    A["Start"] --> B["Load Dataset (heart.csv)"]
+    B --> C["Data Cleaning and Preprocessing"]
+    C --> C1@{ label: "Replace '?' with NaN" } & C2["Convert to Numeric"] & C3["Fill Missing Values"] & C4["Remove Duplicates"] & D["Feature Engineering"]
+    D --> D1["Create Target Variable"] & D2@{ label: "Remove 'num' Column (Avoid Leakage)" } & E["Exploratory Data Analysis"]
+    E --> E1["Count Plot"] & E2["Histogram"] & E3["Heatmap"] & F["Train-Test Split (80/20)"]
+    F --> G["Feature Scaling (StandardScaler)"]
+    G --> H["Model Training"]
+    H --> H1["Logistic Regression"] & H2["Random Forest"] & I["Model Evaluation"]
+    I --> I1["Accuracy Score"] & J["Prediction"]
+    J --> K["End"]
+
+    C1@{ shape: rect}
+    D2@{ shape: rect}
 
 # Exploratory Data Analysis
 I created a few visualizations to understand the dataset better:
