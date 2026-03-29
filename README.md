@@ -27,81 +27,31 @@ Before training the model, I performed some basic data cleaning steps:
 
 ## Workflow Diagram
 
-+-----------------------------+
-| Start |
-+-----------------------------+
-|
-v
-+-----------------------------+
-| Load Dataset (heart.csv) |
-+-----------------------------+
-|
-v
-+-------------------------------------------+
-
-Data Cleaning and Preprocessing
-- Replace '?' with NaN
-- Convert to Numeric
-- Fill Missing Values
-- Remove Duplicates
-+-------------------------------------------+
-          |
-          v
-
-+-------------------------------------------+
-
-Feature Engineering
-- Create Target Variable
-- Remove 'num' (Avoid Leakage)
-+-------------------------------------------+
-          |
-          v
-
-+-------------------------------------------+
-
-Exploratory Data Analysis
-- Count Plot
-- Histogram
-- Heatmap
-+-------------------------------------------+
-          |
-          v
-
-+-----------------------------+
-| Train-Test Split (80/20) |
-+-----------------------------+
-|
-v
-+-----------------------------+
-| Feature Scaling (Standard) |
-+-----------------------------+
-|
-v
-+-------------------------------------------+
-
-Model Training
-- Logistic Regression
-- Random Forest
-+-------------------------------------------+
-          |
-          v
-
-+-----------------------------+
-
-Model Evaluation
-- Accuracy Score
-+-----------------------------+
-          |
-          v
-
-+-----------------------------+
-| Prediction |
-+-----------------------------+
-|
-v
-+-----------------------------+
-| End |
-+-----------------------------+
+```mermaid
+graph TD
+    A[Start] --> B[Load Dataset heart.csv]
+    B --> C[Data Cleaning and Preprocessing]
+    C --> C1[Replace ? with NaN]
+    C --> C2[Convert to Numeric]
+    C --> C3[Fill Missing Values]
+    C --> C4[Remove Duplicates]
+    C4 --> D[Feature Engineering]
+    D --> D1[Create Target Variable]
+    D --> D2[Remove num - Avoid Leakage]
+    D2 --> E[Exploratory Data Analysis]
+    E --> E1[Count Plot]
+    E --> E2[Histogram]
+    E --> E3[Heatmap]
+    E3 --> F[Train-Test Split 80/20]
+    F --> G[Feature Scaling Standard]
+    G --> H[Model Training]
+    H --> H1[Logistic Regression]
+    H --> H2[Random Forest]
+    H2 --> I[Model Evaluation]
+    I --> I1[Accuracy Score]
+    I1 --> J[Prediction]
+    J --> K[End]
+```
 
 # Exploratory Data Analysis
 I created a few visualizations to understand the dataset better:
