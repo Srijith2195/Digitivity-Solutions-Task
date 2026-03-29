@@ -25,50 +25,41 @@ Before training the model, I performed some basic data cleaning steps:
 - Created a new target column for prediction (0 = No disease, 1 = Disease)  
 - Removed unnecessary columns to avoid data leakage  
 
----
-
 ## Workflow Diagram
 
-config:
-  layout: dagre
-## Workflow Diagram
-
-flowchart TD
-
-A[Start] --> B[Load Dataset (heart.csv)]
-B --> C[Data Cleaning and Preprocessing]
-
-C --> C1[Replace '?' with NaN]
-C --> C2[Convert to Numeric]
-C --> C3[Fill Missing Values]
-C --> C4[Remove Duplicates]
-
-C4 --> D[Feature Engineering]
-
-D --> D1[Create Target Variable]
-D --> D2[Remove 'num' Column (Avoid Leakage)]
-
-D2 --> E[Exploratory Data Analysis]
-
-E --> E1[Count Plot]
-E --> E2[Histogram]
-E --> E3[Heatmap]
-
-E3 --> F[Train-Test Split (80/20)]
-
-F --> G[Feature Scaling (StandardScaler)]
-
-G --> H[Model Training]
-
-H --> H1[Logistic Regression]
-H --> H2[Random Forest]
-
-H2 --> I[Model Evaluation]
-
-I --> I1[Accuracy Score]
-I1 --> J[Prediction]
-
-J --> K[End]
+Start  
+↓  
+Load Dataset 
+↓  
+Data Cleaning and Preprocessing  
+    → Replace '?' with NaN  
+    → Convert to Numeric  
+    → Fill Missing Values  
+    → Remove Duplicates  
+↓  
+Feature Engineering  
+    → Create Target Variable  
+    → Remove 'num' Column (Avoid Leakage)  
+↓  
+Exploratory Data Analysis  
+    → Count Plot  
+    → Histogram  
+    → Heatmap  
+↓  
+Train-Test Split (80/20)  
+↓  
+Feature Scaling (StandardScaler)  
+↓  
+Model Training  
+    → Logistic Regression  
+    → Random Forest  
+↓  
+Model Evaluation  
+    → Accuracy Score  
+↓  
+Prediction  
+↓  
+End  
 
 # Exploratory Data Analysis
 I created a few visualizations to understand the dataset better:
